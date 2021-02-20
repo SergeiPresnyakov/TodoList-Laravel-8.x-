@@ -41,4 +41,30 @@ class TodosController extends Controller
 
         return back();
     }
+
+    /**
+     * Todo edit form
+     * 
+     * @param int $id
+     */
+    public function update($id)
+    {
+        $todo = Todo::find($id);
+        return view('update', compact('todo'));
+    }
+
+    /**
+     * Todo update action
+     * 
+     * @param Request $request
+     * @param int $id
+     */
+    public function edit(Request $request, $id)
+    {
+        $todo = Todo::find($id);
+        $todo->todo = $request->todo;
+        $todo->save();
+
+        return redirect()->route('index');
+    }
 }
