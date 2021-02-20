@@ -67,4 +67,18 @@ class TodosController extends Controller
 
         return redirect()->route('index');
     }
+
+    /**
+     * Mark as completed action
+     * 
+     * @param int $id
+     */
+    public function markAsComplete($id)
+    {
+        $todo = Todo::find($id);
+        $todo->completed = 1;
+        $todo->save();
+
+        return redirect()->route('index');
+    }
 }

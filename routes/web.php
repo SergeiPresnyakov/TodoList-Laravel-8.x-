@@ -23,3 +23,4 @@ Route::post('/create/todo', [TodosController::class, 'create'])->name('create.to
 Route::get('/delete/todo/{id}', [TodosController::class, 'destroy'])->name('delete.todo');
 Route::get('/update/todo/{id}', [TodosController::class, 'update'])->name('update.todo');
 Route::post('/edit/todo/{id}', [TodosController::class, 'edit'])->name('todo.update');
+Route::get('/todo/completed/{id}', [TodosController::class, 'markAsComplete'])->name('todo.completed');

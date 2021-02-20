@@ -24,6 +24,7 @@
                         <th scope="col">Todo</th>
                         <th scope="col">Delete</th>
                         <th scope="col">Update</th>
+                        <th scope="col">Is completed</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,7 +33,12 @@
                         <th scope="row">{{ $todo->id }}</th>
                         <td>{{ $todo->todo }}</td>
                         <td><a href="{{ route('delete.todo', ['id' => $todo->id]) }}" class="btn btn-danger btn-lg"> X </a></td>
-                        <td><a href="{{ route('update.todo', ['id' => $todo->id]) }}" class="btn btn-success btn-lg">Update</a></td>
+                        <td><a href="{{ route('update.todo', ['id' => $todo->id]) }}" class="btn btn-warning btn-lg">Update</a></td>
+                        @if(!$todo->completed)
+                        <td><a href="{{ route('todo.completed', ['id' => $todo->id]) }}" class="btn btn-info">Mark as completed</a></td>
+                        @else 
+                        <td><a href="#" class="btn btn-success">Completed</a></td>
+                        @endif
                     </tr>
                     @endforeach
                 </tbody>
