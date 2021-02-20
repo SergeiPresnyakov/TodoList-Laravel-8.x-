@@ -14,7 +14,10 @@
 
 <ol>
     @foreach($todos as $todo)
-        <li>{{ $todo->todo }}</li><hr>
+        <li>{{ $todo->todo }}
+            <a href="{{ route('delete.todo', ['id' => $todo->id]) }}" class="btn btn-danger"> X </a>
+        </li>
+        <hr>
     @endforeach
 </ol>
 @endsection

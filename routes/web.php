@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/todos', [TodosController::class, 'index']);
 Route::post('/create/todo', [TodosController::class, 'create'])->name('create.todo');
+Route::get('/delete/todo/{id}', [TodosController::class, 'destroy'])->name('delete.todo');

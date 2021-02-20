@@ -28,4 +28,17 @@ class TodosController extends Controller
 
         return back();
     }
+
+    /**
+     * Delete todo
+     * 
+     * @param int $id
+     */
+    public function destroy($id)
+    {
+        $todo = Todo::find($id);
+        $todo->delete();
+
+        return back();
+    }
 }
