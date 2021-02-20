@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    @include('messages')
     @yield('content')
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
