@@ -14,4 +14,18 @@ class TodosController extends Controller
 
         return view('todos', compact('todos'));
     }
+
+    /**
+     * Create new todo
+     * 
+     * @param Request $request
+     */
+    public function create(Request $request)
+    {
+        $todo = new Todo;
+        $todo->todo = $request->todo;
+        $todo->save();
+
+        return back();
+    }
 }
