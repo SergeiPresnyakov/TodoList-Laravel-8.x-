@@ -1,3 +1,6 @@
+@extends('layouts.layout')
+
+@section('content')
 <h1>Todos</h1>
 
 <ol>
@@ -5,3 +8,4 @@
         <li>{{ $todo->todo }}</li><hr>
     @endforeach
 </ol>
+@endsection
